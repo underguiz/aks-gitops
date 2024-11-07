@@ -4,13 +4,14 @@ metadata:
   name: azure-resources-tf
   namespace: cluster-config
 spec:
+  breakTheGlass: true
   tfstate:
     forceUnlock: auto
   interval: 1m
   serviceAccountName: tf-controller-sa
   approvePlan: auto
   destroy: true
-  path: ./workload/infra-terraform
+  path: ./workload/infra-terraform/
   sourceRef:
     kind: GitRepository
     name: azure-resources-repo
