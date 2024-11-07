@@ -1,7 +1,7 @@
 apiVersion: infra.contrib.fluxcd.io/v1alpha2
 kind: Terraform
 metadata:
-  name: workload-infra
+  name: azure-resources-tf
   namespace: cluster-config
 spec:
   tfstate:
@@ -13,7 +13,7 @@ spec:
   path: ./workload/infra-terraform
   sourceRef:
     kind: GitRepository
-    name: workload-repo
+    name: azure-resources-repo
     namespace: cluster-config
   runnerPodTemplate:
     spec:

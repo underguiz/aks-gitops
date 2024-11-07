@@ -45,12 +45,12 @@ This step will:
 
 TF-controller configuration
 ```
-$ az k8s-configuration flux create -g aks-gitops -c aks-gitops -n cluster-config --namespace cluster-config -t managedClusters --scope cluster -u https://github.com/underguiz/aks-gitops --branch main --kustomization name=tf-controller path=cluster-config/tf-controller
+$ az k8s-configuration flux create -g aks-gitops -c aks-gitops -n tf-controller --namespace cluster-config -t managedClusters --scope cluster -u https://github.com/underguiz/aks-gitops --branch main --kustomization name=tf-controller path=cluster-config/tf-controller
 ```
 
 Azure Resources configuration
 ```
-$ az k8s-configuration flux create -g aks-gitops -c aks-gitops -n cluster-config --namespace cluster-config -t managedClusters --scope cluster -u https://github.com/underguiz/aks-gitops --branch main --kustomization name=azure-resources path=cluster-config/azure-resources
+$ az k8s-configuration flux create -g aks-gitops -c aks-gitops -n azure-resources --namespace cluster-config -t managedClusters --scope cluster -u https://github.com/underguiz/aks-gitops --branch main --kustomization name=azure-resources path=cluster-config/azure-resources
 ```
 
 ## Reference docs
