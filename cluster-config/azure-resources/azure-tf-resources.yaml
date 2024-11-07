@@ -4,7 +4,6 @@ metadata:
   name: azure-resources-tf
   namespace: cluster-config
 spec:
-  breakTheGlass: true
   tfstate:
     forceUnlock: auto
   interval: 1m
