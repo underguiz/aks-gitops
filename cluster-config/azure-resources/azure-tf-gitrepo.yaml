@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: workload-repo
+  namespace: cluster-config
+spec:
+  interval: 30s
+  url: https://github.com/underguiz/aks-gitops
+  ref:
+    branch: main

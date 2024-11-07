@@ -1,0 +1,24 @@
+apiVersion: infra.contrib.fluxcd.io/v1alpha2
+kind: Terraform
+metadata:
+  name: workload-infra
+  namespace: cluster-config
+spec:
+  tfstate:
+    forceUnlock: auto
+  interval: 1m
+  serviceAccountName: tf-controller-sa
+  approvePlan: auto
+  destroy: true
+  path: ./workload/infra-terraform
+  sourceRef:
+    kind: GitRepository
+    name: workload-repo
+    namespace: cluster-config
+  runnerPodTemplate:
+    spec:
+      env:
+        - name: ARM_USE_OIDC
+          value: "true"
+        - name: ARM_OIDC_TOKEN_FILE_PATH
+          value: "/var/run/secrets/azure/tokens/azure-identity-token"
